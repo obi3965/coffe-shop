@@ -1,0 +1,37 @@
+.homeBanner{
+    background-image: url('https://www.grundig.com/ktchnmag/wp-content/uploads/2016/04/Grundig_KTCHN_Coffee-Machine_Pexels-1280x720.jpeg');
+    height:90vh;
+    background-position:top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    
+}
+
+.content-box{
+    position: absolute;
+    top: 43%;
+    left: 10%;
+    transform: translateY(-43%, -10%);
+}
+.content-box h1{
+    color:#d3ad7f;
+    font-family:'Luckiest Guy', cursive; 
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 50px;
+    letter-spacing: 1.5px;
+}
+
+.btn-default {
+    background-color: #d3ad7f;
+    padding: 9px 40px;
+    color: #fff;
+    text-transform: capitalize;
+    margin-top: 20px;
+}
+.btn-default:hover{
+    color: #fff;
+}
+
