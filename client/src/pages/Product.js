@@ -1,12 +1,9 @@
 import React from 'react'
 import ProductBanner from '../components/banner/ProductBanner'
 
-/**
-* @author
-* @function Product
-**/
 
-const Product = (props) => {
+
+const Product = () => {
   return(
     <div>
       <ProductBanner/>

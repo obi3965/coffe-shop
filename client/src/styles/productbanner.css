@@ -1,8 +1,34 @@
 .productBanner{
-    background-image: url('');
+    background-image: url('https://wallup.net/wp-content/uploads/2017/11/23/417519-drink-coffee-748x468.jpg');
     height: 90vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+.productBanner-box{
+    position: absolute;
+    top: 38%;
+    left: 10%;
+    transform: translateY(-38%, -10%);
+}
+
+.productBanner-box h1{
+    color:#d3ad7f;
+    font-family:'Luckiest Guy', cursive; 
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 50px;
+    letter-spacing: 1.5px;
+}
+
+.btn-default {
+    background-color: #d3ad7f;
+    padding: 9px 40px;
+    color: #fff;
+    text-transform: capitalize;
+    margin-top: 20px;
+}
+.btn-default:hover{
+    color: #fff;
 }
