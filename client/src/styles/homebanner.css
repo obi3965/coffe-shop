@@ -12,13 +12,13 @@
 
 .content-box{
     position: absolute;
-    top: 38%;
-    left: 10%;
-    transform: translateY(-38%, -10%);
+    top: 35%;
+    left: 15%;
+    transform: translateY(-35%, -15%);
 }
 .content-box h1{
     color:#d3ad7f;
-    font-family:'Luckiest Guy', cursive; 
+    font-family: 'Anton', sans-serif; 
     text-transform: capitalize;
     font-weight: 500;
     font-size: 50px;
@@ -27,10 +27,11 @@
 
 .btn-default {
     background-color: #d3ad7f;
-    padding: 9px 40px;
+    padding: 12px 40px !important;
     color: #fff;
     text-transform: capitalize;
     margin-top: 20px;
+    font-size: 20px;
 }
 .btn-default:hover{
     color: #fff;

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import firebaseApp from '../../firebase'
 import { signInWithEmailLink, updatePassword, getIdTokenResult, getAuth } from 'firebase/auth'
+import {createOrUpdateUser} from '../../functions/auth';
 
 firebaseApp()
 
@@ -12,11 +13,14 @@ firebaseApp()
    const [password, setPassword ] = useState("")
   
    const auth = getAuth()
+   let dispatch = useDispatch()
+   const { user } = useSelector((state) =>({...state}))
+
     useEffect(() => {
        setEmail(window.localStorage.getItem('emailForRegistration'))
        //console.log(window.location.href);
        //console.log(window.localStorage.getItem('emailForRegistration'));
-    }, []);
+    }, [user]);
    const handleSubmit = async (e) => {
     e.preventDefault();
     if(!email || !password){
@@ -33,15 +37,30 @@ firebaseApp()
       if(result.user.emailVerified){
           window.localStorage.removeItem("emailForRegistration")
           let user = auth.currentUser
-          await updatePassword(user, password)
+          await updatePassword(user,password)
           const idTokenResult = await getIdTokenResult(user)
           console.log("user", user, "idTokenResult", idTokenResult);
-        // redirect
+        
+          createOrUpdateUser(idTokenResult.token)
+          .then((res) => {
+            dispatch({
+              type: "LOGGED_IN_USER",
+              payload: {
+                name: res.data.name,
+                email: res.data.email,
+                token: idTokenResult.token,
+                role: res.data.role,
+                _id: res.data._id,
+              },
+            });
+          })
+          .catch((err) => console.log(err));
+
         history.push("/");
       }
     } catch (error) {
-        console.log(error);
-        toast.error(error.message);
+      console.log(error.message);
+      toast.error(error.message);
     }
     
   };
@@ -64,7 +83,7 @@ firebaseApp()
         placeholder="password"
       />
      
-      <button type="submit" className="btn btn-raised">
+      <button type="submit" className="btn btn-danger">
        complete Registeration
       </button>
     </form>

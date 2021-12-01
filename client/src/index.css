@@ -1,11 +1,17 @@
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #1b1b1b;
-  height: auto;
+  font-family: 'Montserrat', sans-serif !important;
+  /* height: auto;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  padding: 0;
 }
+html, body{
+  background-color: #1b1b1b !important; 
+}
+
+/* #141414 */
+/* #1b1b1b */
 

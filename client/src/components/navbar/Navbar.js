@@ -46,7 +46,7 @@ firebaseApp()
             </li>
            
             <li className='nav-item'>
-              <NavLink to='/products' className='nav-links' onClick={closeMobileMenu} exact={true}>
+              <NavLink to='/product' className='nav-links' onClick={closeMobileMenu} exact={true}>
                 products
               </NavLink>
             </li>
@@ -77,6 +77,28 @@ firebaseApp()
               
               onClick={closeMobileMenu} > 
                  sign in
+              </NavLink>
+              </li>
+              )}
+
+            {user && user.role === "subscriber" &&(
+                   <li className='nav-item'>
+              <NavLink 
+              to='/user/history' className="user-reg"
+              
+              onClick={closeMobileMenu} > 
+                user dashboard
+              </NavLink>
+              </li>
+              )}
+
+                 {user && user.role === "admin" &&(
+                   <li className='nav-item'>
+              <NavLink 
+              to='/admin/dashboard' className="user-reg"
+              
+              onClick={closeMobileMenu} > 
+                admin dashboard
               </NavLink>
               </li>
               )}

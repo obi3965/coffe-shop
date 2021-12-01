@@ -1,0 +1,22 @@
+.c-box{
+    display: flex;
+    justify-content: space-between;
+    background-color:rgba(0,0,0,0.6);
+    border: none !important;
+}
+.c-btn{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+.createForm{
+    width: 500px;
+    margin: auto;
+}
+.AdminNav{
+    background-color:rgba(0,0,0,0.6);
+}
+.title h3{
+    color: #fff;
+    opacity: .85;
+}

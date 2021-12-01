@@ -45,7 +45,7 @@ firebaseApp()
         autoFocus
       />
      
-      <button type="submit" className="btn btn-raised">
+      <button type="submit" className="btn btn-danger">
         Register
       </button>
     </form>
