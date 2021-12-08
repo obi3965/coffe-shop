@@ -5,9 +5,8 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const path = require('path')
 const dotenv = require("dotenv")
-const cloudinary = require('cloudinary')
 const fileUpload = require('express-fileupload')
-
+const { readdirSync } = require("fs");
 
 
 
@@ -20,17 +19,13 @@ if(process.env.NODE_ENV !== "PRODUCTION"){
 }
 connectDb()
 
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
-});
 
 const auth = require('./routes/auth')
 const products = require('./routes/product')
 // const order = require('./routes/order')
 const category = require('./routes/category')
 const subCategory = require('./routes/subCategory')
+const uploadImages = require('./routes/cloudinary')
 
 app.use(morgan('dev'))
 app.use(express.json())
@@ -46,7 +41,9 @@ app.use('/api/v1', auth)
 app.use('/api/v1', category)
 app.use('/api/v1', subCategory)
 app.use('/api/v1', products)
-
+app.use('/api/v1', uploadImages)
+// routes middleware
+//readdirSync("./routes").map((r) => app.use("/api/v1", require("./routes/" + r)));
 
 const port = process.env.PORT;
 app.listen(port, () => {

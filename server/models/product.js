@@ -18,7 +18,7 @@ const productSchema = new mongoose.Schema(
     },
     description: {
       type: String,
-      required: true,
+      // required: true,
       maxlength: 2000,
       text: true,
     },
@@ -28,24 +28,24 @@ const productSchema = new mongoose.Schema(
       trim: true,
       maxlength: 32,
     },
-    // category: {
-    //   type: ObjectId,
-    //   ref: "Category",
-    // },
-    // subs: [
-    //   {
-    //     type: ObjectId,
-    //     ref: "Sub",
-    //   },
-    // ],
+    category: {
+      type: ObjectId,
+      ref: "Category",
+    },
+    subs: [
+      {
+        type: ObjectId,
+        ref: "SubCategory",
+      },
+    ],
     quantity: Number,
     sold: {
       type: Number,
       default: 0,
     },
-    // images: {
-    //   type: Array,
-    // },
+    images: {
+      type: Array,
+    },
     shipping: {
       type: String,
       enum: ["Yes", "No"],
@@ -56,7 +56,7 @@ const productSchema = new mongoose.Schema(
     },
     brand: {
       type: String,
-      enum: ["Apple", "Samsung", "Microsoft", "Lenovo", "ASUS"],
+      enum: ["Good Bar", "Bistro Bar", "Argentina", "Ethopian", "Arabic"],
     },
     // ratings: [
     //   {

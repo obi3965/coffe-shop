@@ -31,10 +31,9 @@ exports.list = async (req, res) =>{
 exports.read = async (req, res) => {
   try {
      const sub = await SubCategory.findOne({ slug: req.params.slug }).exec();
-  if(sub) return res.status(400).json({msg:'sub category not found'})
   res.json(sub);
   } catch (err) {
-    return res.status(500).json({msg:err.message});
+    return res.status(500).json({err:'server error'});
   }
  
 
@@ -43,15 +42,14 @@ exports.read = async (req, res) => {
 exports.update = async (req, res) => {
   const { name, parent } = req.body;
   try {
-    const updated = await SubCategory.findOneAndUpdate(
+    const updated = await Sub.findOneAndUpdate(
       { slug: req.params.slug },
       { name, parent, slug: slugify(name) },
       { new: true }
     );
-    if(updated) return res.status(400).json({msg:'sub category update failed'})
     res.json(updated);
   } catch (err) {
-   return res.status(400).json({msg:err.message});
+    res.status(400).send("Sub update failed");
   }
 };
 

@@ -9,10 +9,10 @@ const router = express.Router()
 
 
 router.post('/product', isAuthenticatedUser,isAuthenticatedAdmin, create)
-// router.get('/product/:slug', isAuthenticatedUser, read)
-// router.get('/products', list)
-// router.put('/product/:slug', isAuthenticatedUser,isAuthenticatedAdmin,update )
-// router.delete('/product/:slug', isAuthenticatedUser,isAuthenticatedAdmin, remove)
+router.get('/product/:slug', read)
+ router.get('/products/:count', list)
+ router.put('/product/:slug', isAuthenticatedUser,isAuthenticatedAdmin,update )
+ router.delete('/product/:slug', isAuthenticatedUser,isAuthenticatedAdmin, remove)
 
 
 module.exports = router
