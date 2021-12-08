@@ -58,7 +58,7 @@ const CategoryCreate = () => {
         .then((res) => {
           console.log("deleted", res);
           setLoading(false);
-          toast.error(`${res.data.name}is deleted`);
+          toast.error(`${res.data.name} is deleted`);
           loadCategories();
         })
         .catch((err) => {
@@ -76,12 +76,12 @@ const CategoryCreate = () => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-lg-2 col-md-3 col-sm-6 AdminNav">
+        <div className="col-lg-3 col-md-3 col-sm-6 AdminNav">
           <div className="adminNav">
             <AdminNav />
           </div>
         </div>
-        <div className="col-lg-10 col-md-9 col-sm-6">
+        <div className="col-lg-9 col-md-9 col-sm-6">
           {loading ? <Loader /> : <h4>Create category</h4>}
           <div className="createForm">
             <CategoryForm

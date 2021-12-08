@@ -4,9 +4,9 @@ import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { getCategories } from "../../../functions/category";
 import Loader from "../../../components/layout/Loader";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import CategoryForm from "../../../components/form/CategoryForm";
-import LocalSearch from "../../../components/form/LocalSearch";
+// import LocalSearch from "../../../components/form/LocalSearch";
 import { getSub, updateSub} from "../../../functions/subCategory";
 
 const SubUpdate = ({ match, history }) => {
@@ -40,23 +40,24 @@ const SubUpdate = ({ match, history }) => {
         // console.log(res)
         setLoading(false);
         setName("");
+        
         toast.success(`"${res.data.name}" is updated`);
         history.push("/admin/sub");
       })
       .catch((err) => {
         console.log(err);
         setLoading(false);
-        if (err.response.status === 400) toast.error(err.response.data.msg);
+        if (err.response.status === 400) toast.error(err.response.data);
       });
   };
 
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-2">
+        <div className="col-md-3">
           <AdminNav />
         </div>
-        <div className="col">
+        <div className="col-lg-9 col-md-9 col-sm-6">
           {loading ? (
             <Loader/>
           ) : (
