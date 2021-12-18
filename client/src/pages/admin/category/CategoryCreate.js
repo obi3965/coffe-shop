@@ -14,10 +14,14 @@ import { Link } from "react-router-dom";
 import CategoryForm from "../../../components/form/CategoryForm";
 import LocalSearch from "../../../components/form/LocalSearch";
 
+
+
+
 const CategoryCreate = () => {
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const [categories, setCategories] = useState([]);
+ 
   // step 1
   const [keyword, setKeyword] = useState("");
 
@@ -90,6 +94,7 @@ const CategoryCreate = () => {
               setName={setName}
             />
           </div>
+          
           <hr className="bg-info" />
           {/* step 2 and step 3 */}
           <LocalSearch keyword={keyword} setKeyword={setKeyword} />

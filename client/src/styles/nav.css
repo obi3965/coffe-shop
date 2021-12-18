@@ -1,50 +1,73 @@
-.navbar{
-background-color: #1b1b1b;
-   
+
+
+.user-logout{
+  color: #fff;
+  line-height: 50px;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
-
-
 
 .user{
     list-style: none !important;
-    width: 250px;
+    width: 350px;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
+    
 }
 .is-active{
     color: #d3ad7f!important;
 }
-.cart-badge, .cart-badge:hover
- {
-    border-radius: 50%;
-    font-size: 12px;
-    padding: 4px 8px;
-    background:#d3ad7f;
-    color: #fff;
-}
+
 
 .user-reg{
     color: #fff;
     line-height: 50px;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 15px !important;
+    font-weight: 400;
     text-decoration: none !important;
+    text-transform: uppercase;
 }
-.user-reg:hover{
+.user-reg:hover, .user-logout:hover{
   color: #d3ad7f;
 }
+.navbar.change{
+  background-color: #fff !important;
+  transition: all .4s;
+  visibility: visible !important;
+  z-index: 999 !important;
+  box-shadow:0px 2px 2px -1px rgba(0,0,0,0.1);
+  
+}
+.navbar.change .nav-links{
+  color: #000 !important;
+}
+.navbar.change .user-reg {
+  color: #000 !important;
+}
+.navbar.change .user-logout{
+  color: #000 !important;
+}
 .navbar {
-    background-color: #1b1b1b;
+    background-color: transparent !important;
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    position: sticky;
+    position: fixed;
     top: 0 !important;
     z-index: 999;
+    left: 0;
+    right: 0;
+    transition: all ease-in-out .4s;
+    
   }
+
+  
   
   .navbar-container {
     display: flex;
@@ -89,14 +112,14 @@ background-color: #1b1b1b;
     margin-right: 30px;
     height: 100%;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 1px;
-    font-size: 14px;
+    font-size: 15px;
   }
   
   .nav-links:hover {
     border-bottom: 4px solid #d3ad7f;
-    transition: all 0.2s ease-out;
+    transition: all 0.2s ease-in-out;
      color: #d3ad7f !important;
   }
   .nav-links.is-active{
@@ -118,13 +141,14 @@ background-color: #1b1b1b;
     color: #d3ad7f !important;
   }
 
-  .logo{
-      background-image: url('../img/logo.png');
-      height:55px;
-      width: 55px;
+  .logo img{
+      /* background-image: url('../img/kofi.png'); */
+      height:50px;
+      width: 140px;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      margin-bottom: 6px;
   }
   @media screen and (max-width: 960px) {
     .NavbarItems {

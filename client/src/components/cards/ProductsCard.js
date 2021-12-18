@@ -1,14 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "../../styles/product.css"
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 
-
-const ProductCard = ({ product }) => {
-    const { images, title, price, slug } = product
-  return (
-    <>
-    <div className="product-card-box">
+ const ProductsCard = ({productsList}) => {
+    const { title, images, price, slug } = productsList
+  return(
+    <div>
+  <div className="product-card-box">
       <img 
         src={
           images && images.length ? images[0].url : ""
@@ -24,11 +22,8 @@ const ProductCard = ({ product }) => {
           <Link className="btn btn-success btn-sm" to="">buy</Link>
       </div>
     </div>
-    </>
-)
-  
-} 
+    </div>
+   )
 
-
-
-export default ProductCard;
+ }
+ export default ProductsCard

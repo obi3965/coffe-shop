@@ -1,15 +1,10 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif !important;
-  /* height: auto;
-  width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
   padding: 0;
 }
 html, body{
-  background-color: #1b1b1b !important; 
+  /* background-color: #1b1b1b !important;  */
 }
 
 /* #141414 */

@@ -1,0 +1,13 @@
+.slide img{
+    height: 100%;
+    z-index: 999;
+}
+.slide{
+    
+    height: 100%;
+    width: 100% !important;
+}
+.thumb img{
+    height: 60px;
+    width: 60px;
+}

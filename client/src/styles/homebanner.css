@@ -1,7 +1,7 @@
 .homeBanner{
     /* background-image: url('https://www.grundig.com/ktchnmag/wp-content/uploads/2016/04/Grundig_KTCHN_Coffee-Machine_Pexels-1280x720.jpeg'); */
-    height:90vh;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)), url('../img/home-img.jpeg');
+    height:100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.5)), url('../img/banner.jpg');
     background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -12,28 +12,39 @@
 
 .content-box{
     position: absolute;
-    top: 35%;
+    top: 45%;
     left: 15%;
-    transform: translateY(-35%, -15%);
+    transform: translateY(-45%, -15%);
+    width: 45%;
+    
 }
 .content-box h1{
-    color:#d3ad7f;
+    color:#000;
     font-family: 'Anton', sans-serif; 
     text-transform: capitalize;
     font-weight: 500;
     font-size: 50px;
     letter-spacing: 1.5px;
 }
+.content-box p{
+    color: #000;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
 
 .btn-default {
-    background-color: #d3ad7f;
+    background-color: #c7a17a;;
     padding: 12px 40px !important;
     color: #fff;
     text-transform: capitalize;
     margin-top: 20px;
     font-size: 20px;
+    border-radius: 30px;
+    transition: all ease-in-out .4s;
 }
 .btn-default:hover{
     color: #fff;
+    background-color: #000;
+    transition: all ease-in-out .4s;
 }
 

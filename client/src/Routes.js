@@ -28,6 +28,7 @@ import SubUpdate from './pages/admin/sub/SubUpdate';
 import CreateProduct from './pages/admin/product/CreateProduct';
 import AllProducts from './pages/admin/product/AllProducts';
 import ProductUpdate from './pages/admin/product/ProductUpdate';
+import { Products } from './pages/Products';
 
 
 firebaseApp()
@@ -76,7 +77,7 @@ return () => unsubscribe()
       <Switch>
        <Route path="/" exact component={Home} />
        <Route path="/cart" exact component={Cart} />
-       <Route path="/products" exact component={ Product } /> 
+       <Route path="/products" exact component={ Products } /> 
        <Route path="/contact" exact component={ Contact } /> 
        <Route path="/signup" exact component={ Signup } /> 
        <Route path="/signup/complete" exact component={ SignupComplete } /> 
@@ -93,6 +94,8 @@ return () => unsubscribe()
        <AdminRoute exact path="/admin/product" component={ CreateProduct } />
        <AdminRoute exact path="/admin/products" component={ AllProducts } />
        <AdminRoute exact path="/admin/product/:slug" component={ ProductUpdate } />
+       <Route exact path="/product/:slug" component={Product} />
+       
       </Switch>
     </BrowserRouter>
     

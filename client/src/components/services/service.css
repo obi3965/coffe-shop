@@ -1,0 +1,27 @@
+.service-card{ 
+    padding: 22px;
+    margin-top: 20px;
+    box-shadow: 0px 2px 7px 2px rgba(0,0,0,5%);
+}
+.service-item{
+    padding-top: 10px !important;
+}
+.service-item h1{
+    font-size: 17px !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+   
+}
+.service-title{
+  text-align: center !important;  
+  margin-top: 40px;
+}
+.service-title span{
+    color: #d3ad7f;
+    font-size: 20px;
+}
+.service-title h1{
+    color: #000;
+    font-weight: 600;
+    font-size: 30px;
+}

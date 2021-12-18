@@ -3,6 +3,9 @@ import React from 'react'
 
 
  const CategoryForm = ({handleSubmit, name, setName}) => {
+
+ 
+
   return(
     <>
     <form onSubmit={handleSubmit}>
